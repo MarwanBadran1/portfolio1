@@ -1,0 +1,46 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.projects img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.cv-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.cv-button:hover {
+  background-color: #e65c00;
+}
