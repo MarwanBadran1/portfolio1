@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Marwan Badran - Data Analyst Portfolio showcasing expertise in Python, SQL, Excel, Power BI, and Tableau">
+  <meta name="keywords" content="Data Analyst, Python, SQL, Excel, Power BI, Tableau, Portfolio">
+  <meta name="author" content="Marwan Badran">
   <title>Marwan Badran - Data Analyst Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="logo.jpg">
 </head>
 <body>
   <nav>
@@ -146,6 +150,28 @@
       section.style.transform = 'translateY(20px)';
       section.style.transition = 'all 0.5s ease-out';
       observer.observe(section);
+    });
+
+    // Add active state to navigation links
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+          link.classList.add('active');
+        }
+      });
     });
   </script>
 </body>
