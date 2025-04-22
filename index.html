@@ -15,6 +15,11 @@
   <link rel="icon" type="image/x-icon" href="logo.jpg">
 </head>
 <body>
+  <div class="loader-wrapper">
+    <div class="loader"></div>
+  </div>
+  <div class="scroll-progress"></div>
+
   <nav>
     <div class="nav-container">
       <a href="#" class="logo">
@@ -125,6 +130,24 @@
   </div>
 
   <script>
+    // Loading Animation
+    window.addEventListener('load', () => {
+      const loader = document.querySelector('.loader-wrapper');
+      loader.style.opacity = '0';
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 500);
+    });
+
+    // Scroll Progress Bar
+    window.addEventListener('scroll', () => {
+      const scrollProgress = document.querySelector('.scroll-progress');
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = window.scrollY;
+      const progress = (scrolled / scrollable) * 100;
+      scrollProgress.style.width = progress + '%';
+    });
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
